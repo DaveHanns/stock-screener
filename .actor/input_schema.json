@@ -1,0 +1,35 @@
+{
+    "title": "Stock Screener input schema",
+    "description": "Enter options to validate data based on exchange, dividend payout, PE, ...",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "exchanges": {
+            "title": "Screened exchanges",
+            "description": "Select exchanges to be screened",
+            "type": "array",
+            "editor": "select",
+            "items": {
+                "type": "string",
+                "enum": ["NYSE", "NASDAQ"],
+                "enumTitles": ["NYSE", "NASDAQ"]
+            },
+            "default": ["NYSE", "NASDAQ"]
+        },
+        "dividendPayoutValidator": {
+            "title": "Dividend payout validator",
+            "description": "Validate each stock based on its dividend payout",
+            "type": "string",
+            "prefill": "async (yieldPercent, ratioPercent, growthPercent) => yieldPercent >= 2.5 && ratioPercent <= 40 && growthPercent >= 7;",
+            "editor": "javascript"
+        },
+        "peValidator": {
+            "title": "PE validator",
+            "description": "Validate each stock based on its PE",
+            "type": "string",
+            "prefill": "async (current, forward) => current > 0 && current <= 15 && forward <= current;",
+            "editor": "javascript"
+        }
+    },
+    "required": ["exchanges"]
+}
