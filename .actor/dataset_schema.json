@@ -1,0 +1,80 @@
+{
+    "actorSpecification": 1,
+    "fields": {},
+    "views": {
+        "hotels": {
+            "title": "Overview",
+            "description": "Overview of scraped stocks",
+            "transformation": {
+                "flatten": [
+                    "price",
+                    "pe",
+                    "dividendPayout"
+                ],
+                "fields": [
+                    "name",
+                    "symbol",
+                    "exchange",
+
+                    "price.amount",
+                    "price.currency",
+
+                    "pe.current",
+                    "pe.forward",
+
+                    "dividendPayout.yieldPercent",
+                    "dividendPayout.ratioPercent",
+                    "dividendPayout.growthPercent"
+                ]
+            },
+            "display": {
+                "component": "table",
+                "properties": {
+                    "name": {
+                        "label": "Name",
+                        "format": "text"
+                    },
+                    "symbol": {
+                        "label": "Symbol",
+                        "format": "text"
+                    },
+                    "exchange": {
+                        "label": "Exchange",
+                        "format": "text"
+                    },
+
+                    "price.amount": {
+                        "label": "Price",
+                        "format": "number"
+                    },
+                    "price.currency": {
+                        "label": "Currency",
+                        "format": "text"
+                    },
+
+                    "pe.current": {
+                        "label": "Current PE",
+                        "format": "number"
+                    },
+                    "pe.forward": {
+                        "label": "Forward PE",
+                        "format": "number"
+                    },
+
+                    "dividendPayout.yieldPercent": {
+                        "label": "Dividend yield %",
+                        "format": "number"
+                    },
+                    "dividendPayout.ratioPercent": {
+                        "label": "Dividend payout %",
+                        "format": "number"
+                    },
+                    "dividendPayout.growthPercent": {
+                        "label": "Dividend growth %",
+                        "format": "number"
+                    }
+                }
+            }
+        }
+    }
+}
