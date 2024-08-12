@@ -7,6 +7,9 @@
 	"meta": {
 		"templateId": "ts-crawlee-puppeteer-chrome"
 	},
+    "storages": {
+        "dataset": "./dataset_schema.json"
+    },
 	"input": "./input_schema.json",
 	"dockerfile": "./Dockerfile"
 }
