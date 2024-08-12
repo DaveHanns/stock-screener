@@ -1,9 +1,9 @@
 {
 	"actorSpecification": 1,
 	"name": "stock-screener",
-	"title": "Project Puppeteer Crawler Typescript",
-	"description": "Crawlee and Puppeteer project in typescript.",
-	"version": "0.0",
+	"title": "Stock Screener",
+	"description": "Scrape market data with convenient filtering to fit your investing strategy",
+	"version": "1.0",
 	"meta": {
 		"templateId": "ts-crawlee-puppeteer-chrome"
 	},
